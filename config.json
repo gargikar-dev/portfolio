@@ -1,0 +1,35 @@
+{
+  "automation_settings": {
+    "outreach_batch_size": 50,
+    "follow_up_sequence": [
+      {
+        "delay_hours": 24,
+        "message": "Follow-up: Still thinking about how AI could save your business.",
+        "type": "gentle_reminder"
+      },
+      {
+        "delay_hours": 48,
+        "message": "Quick question: What's your biggest operational headache right now?",
+        "type": "value_question"
+      },
+      {
+        "delay_hours": 168,
+        "message": "No worries - sending you 3 AI automation ideas. If useful, reply anytime!",
+        "type": "value_add"
+      }
+    ],
+    "lead_scoring": {
+        "urgency_weight": 0.3,
+        "budget_weight": 0.25,
+        "ai_readiness_weight": 0.2,
+        "platform_reputation_weight": 0.15,
+        "posted_recent_weight": 0.1
+    }
+  },
+  "email_tracking": {
+    "track_open": true,
+    "track_clicks": true,
+    "remove_unresponsive_after_days": 15,
+    "max_follow_ups": 3
+  }
+}

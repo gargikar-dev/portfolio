@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Patient Scheduling AI Case Study — Gargi Kar</title>
+    <meta name="description" content="How Gargi Kar deployed a 24/7 AI patient scheduling assistant with insurance verification, boosting bookings by 60% and reducing no-shows by 35%.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#FFFFFF',
+                        borderHairline: '#E4E4E7',
+                        borderSubtle: '#D4D4D8',
+                        surface: '#FAFAFA',
+                        surfaceMuted: '#F4F4F5',
+                        pitchBlack: '#09090B',
+                        charcoal: '#52525B',
+                        mutedCaption: '#71717A',
+                        emeraldLive: '#059669',
+                    },
+                    boxShadow: {
+                        subtle: '0 1px 2px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.06)',
+                        cardLift: '0 20px 32px -8px rgba(0,0,0,0.09), 0 1px 3px rgba(0,0,0,0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .keycap {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 1px 5px;
+            background: #FAFAFA;
+            color: #52525B;
+            border: 1px solid #D4D4D8;
+            border-bottom: 2px solid #A1A1AA;
+            border-radius: 4px;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-primary .keycap {
+            background: #27272A;
+            color: #FAFAFA;
+            border-color: #3F3F46;
+            border-bottom-color: #52525B;
+        }
+        .ambient-card {
+            background: #FAFAFA;
+            border: 1px solid #E4E4E7;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.06);
+        }
+    </style>
+</head>
+<body class="bg-white text-pitchBlack antialiased selection:bg-black selection:text-white">
+
+    <!-- Sticky Glass Navbar -->
+    <header class="sticky top-0 z-40 w-full border-b border-borderHairline bg-white/85 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2 group text-sm font-semibold text-charcoal hover:text-pitchBlack">
+                    <img src="gargi-kar.jpg" alt="Gargi Kar" class="w-7 h-7 rounded-full object-cover border border-borderHairline shadow-sm" />
+                    <span class="font-bold text-pitchBlack">Gargi Kar</span>
+                </a>
+                <span class="text-borderSubtle">/</span>
+                <a href="index.html#case-studies" class="flex items-center gap-1 text-xs font-mono text-mutedCaption hover:text-pitchBlack">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                    <span>Portfolio</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="mailto:gargikar63@gmail.com?subject=Inquiry:%20Healthcare%20Scheduling%20AI" class="btn-primary inline-flex items-center gap-2 bg-pitchBlack text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                    <span>Hire for Similar Project</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        
+        <div class="mb-10">
+            <div class="flex items-center gap-2.5 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full bg-surface border border-borderHairline font-mono text-xs text-charcoal font-medium">Healthcare</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 font-mono text-xs text-emeraldLive font-semibold">280% ROI Achieved</span>
+                <span class="text-xs font-mono text-mutedCaption">Deployment: 5 weeks</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack leading-[1.15]">
+                Healthcare Patient Scheduling AI: 24/7 Triage, 60% Booking Surge & 35% Fewer No-Shows
+            </h1>
+            <p class="mt-4 text-lg text-charcoal leading-relaxed">
+                Deploying an intelligent conversational AI booking assistant integrated with Twilio, Google Calendar, and insurance pre-verification to automate 200+ patient interactions each week.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-surface border border-borderHairline shadow-subtle mb-14 text-center">
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">+60%</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Appointment Bookings</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">-35%</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Patient No-Show Rate</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">200+</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Weekly Interactions</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-emeraldLive">280%</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Measured First-Year ROI</div>
+            </div>
+        </div>
+
+        <div class="space-y-12 text-charcoal text-base leading-relaxed">
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3 flex items-center gap-2">
+                    <i data-lucide="activity" class="w-5 h-5 text-pitchBlack"></i>
+                    Clinical Setting & Inbound Overload
+                </h2>
+                <p>
+                    A multi-location outpatient specialty medical clinic was overwhelmed by 50+ phone calls per day for routine appointment requests, insurance checks, and rescheduling. Front-desk receptionists were missing approximately 40% of peak call volume. Patients unable to get through during work hours simply booked appointments with competing clinics.
+                </p>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-5 h-5 text-pitchBlack"></i>
+                    The 24/7 AI Scheduling Engine
+                </h2>
+                <p class="mb-4">
+                    Gargi Kar designed and deployed an automated patient interaction workflow using <strong>GPT-4</strong>, <strong>Twilio</strong>, <strong>Google Calendar API</strong>, and <strong>n8n</strong>:
+                </p>
+
+                <div class="rounded-xl border border-borderHairline bg-surface p-5 font-mono text-xs space-y-3 my-6">
+                    <div class="text-mutedCaption">// Autonomous Patient Scheduling Flow</div>
+                    <div class="text-pitchBlack">
+                        <strong>1. Omni-Channel Inbound:</strong> Patient engages via website widget or SMS (day or night).
+                    </div>
+                    <div class="text-pitchBlack pl-4">
+                        ↳ GPT-4 performs friendly triage: symptom category, doctor availability, provider in-network check.
+                    </div>
+                    <div class="text-pitchBlack">
+                        <strong>2. Real-Time Slot Locking:</strong> Direct API integration with Google Calendar finds matching openings.
+                    </div>
+                    <div class="text-pitchBlack">
+                        <strong>3. Automated Verification:</strong> Requests insurance photo/ID and confirms copay parameters.
+                    </div>
+                    <div class="text-emeraldLive font-semibold">
+                        <strong>4. Smart Reminders:</strong> Automated 48h & 2h SMS reminders with one-click confirmation or reschedule.
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-4 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-pitchBlack"></i>
+                    Measured Impact & Clinical ROI
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border border-borderHairline rounded-lg overflow-hidden font-mono">
+                        <thead class="bg-surface uppercase text-mutedCaption border-b border-borderHairline">
+                            <tr>
+                                <th class="p-3">Clinical Metric</th>
+                                <th class="p-3">Before AI System</th>
+                                <th class="p-3">With Gargi's AI</th>
+                                <th class="p-3 text-emeraldLive">Net Improvement</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-borderHairline">
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Missed Appointment Requests</td>
+                                <td class="p-3">40% of calls missed</td>
+                                <td class="p-3 font-bold text-pitchBlack">&lt; 1% (24/7 availability)</td>
+                                <td class="p-3 text-emeraldLive font-bold">+60% total bookings</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Patient No-Show Rate</td>
+                                <td class="p-3">18.5%</td>
+                                <td class="p-3 font-bold text-pitchBlack">11.9%</td>
+                                <td class="p-3 text-emeraldLive font-bold">35% drop in no-shows</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Staff Burnout & Focus</td>
+                                <td class="p-3">50+ repetitive calls/day</td>
+                                <td class="p-3 font-bold text-pitchBlack">Automated self-serve</td>
+                                <td class="p-3 text-emeraldLive font-bold">Staff freed for urgent care</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3">Tool Stack</h2>
+                <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">Twilio SMS / Voice API</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">Google Calendar API</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">OpenAI GPT-4</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">n8n Orchestration</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">HIPAA-Compliant Encrypted Webhooks</span>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <div class="p-6 rounded-xl bg-surface border border-borderHairline shadow-subtle italic text-charcoal text-sm leading-relaxed">
+                    "Patients love being able to schedule at 10 PM from their phone without waiting on hold. Our doctor schedules are fuller than ever, and our front-desk team is no longer stressed by ringing phones all day."
+                    <div class="mt-3 font-semibold text-xs text-pitchBlack not-italic">
+                        — Operations Director, Regional Medical Group
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-borderHairline flex items-center justify-between">
+            <a href="case-study-legal.html" class="text-xs font-mono font-medium text-charcoal hover:text-pitchBlack flex items-center gap-1.5">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                Previous: Legal Document AI
+            </a>
+            <a href="case-study-manufacturing.html" class="text-xs font-mono font-semibold text-pitchBlack hover:underline flex items-center gap-1.5">
+                Next: Manufacturing QC AI
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+
+        <div class="mt-14 rounded-2xl border border-pitchBlack bg-pitchBlack text-white p-8 text-center shadow-cardLift">
+            <h3 class="text-2xl font-bold tracking-tight">Need 24/7 AI Assistants for Your Business?</h3>
+            <p class="mt-2 text-xs text-zinc-400 max-w-md mx-auto">
+                Turn missed customer calls into confirmed appointments and revenue automatically.
+            </p>
+            <div class="mt-5 flex justify-center gap-3">
+                <a href="mailto:gargikar63@gmail.com?subject=Healthcare%20Scheduling%20Automation" class="btn-primary text-xs font-semibold px-5 py-2.5 rounded-full bg-white text-pitchBlack hover:bg-zinc-100">
+                    Connect With Gargi Kar
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-borderHairline bg-surface py-8 text-center text-xs text-mutedCaption font-mono">
+        © 2026 Gargi Kar • AI Automation Expert • gargikar63@gmail.com
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

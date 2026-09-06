@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Lead Gen AI Case Study — Gargi Kar</title>
+    <meta name="description" content="How Gargi Kar built an AI lead scoring and multi-channel follow-up system that generated 127 qualified leads/mo and closed $1.2M in commission deals.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#FFFFFF',
+                        borderHairline: '#E4E4E7',
+                        borderSubtle: '#D4D4D8',
+                        surface: '#FAFAFA',
+                        surfaceMuted: '#F4F4F5',
+                        pitchBlack: '#09090B',
+                        charcoal: '#52525B',
+                        mutedCaption: '#71717A',
+                        emeraldLive: '#059669',
+                    },
+                    boxShadow: {
+                        subtle: '0 1px 2px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.06)',
+                        cardLift: '0 20px 32px -8px rgba(0,0,0,0.09), 0 1px 3px rgba(0,0,0,0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .keycap {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 1px 5px;
+            background: #FAFAFA;
+            color: #52525B;
+            border: 1px solid #D4D4D8;
+            border-bottom: 2px solid #A1A1AA;
+            border-radius: 4px;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-primary .keycap {
+            background: #27272A;
+            color: #FAFAFA;
+            border-color: #3F3F46;
+            border-bottom-color: #52525B;
+        }
+        .ambient-card {
+            background: #FAFAFA;
+            border: 1px solid #E4E4E7;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.06);
+        }
+    </style>
+</head>
+<body class="bg-white text-pitchBlack antialiased selection:bg-black selection:text-white">
+
+    <!-- Sticky Glass Navbar -->
+    <header class="sticky top-0 z-40 w-full border-b border-borderHairline bg-white/85 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2 group text-sm font-semibold text-charcoal hover:text-pitchBlack">
+                    <img src="gargi-kar.jpg" alt="Gargi Kar" class="w-7 h-7 rounded-full object-cover border border-borderHairline shadow-sm" />
+                    <span class="font-bold text-pitchBlack">Gargi Kar</span>
+                </a>
+                <span class="text-borderSubtle">/</span>
+                <a href="index.html#case-studies" class="flex items-center gap-1 text-xs font-mono text-mutedCaption hover:text-pitchBlack">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                    <span>Portfolio</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="mailto:gargikar63@gmail.com?subject=Inquiry:%20Real%20Estate%20Lead%20Gen" class="btn-primary inline-flex items-center gap-2 bg-pitchBlack text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                    <span>Hire for Similar Project</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        
+        <!-- Header & Breadcrumbs -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2.5 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full bg-surface border border-borderHairline font-mono text-xs text-charcoal font-medium">Real Estate</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 font-mono text-xs text-emeraldLive font-semibold">290% ROI Achieved</span>
+                <span class="text-xs font-mono text-mutedCaption">Deployment: 2 weeks</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack leading-[1.15]">
+                Real Estate Lead Gen AI: Generating 127 Qualified Leads/Month & $1.2M Commission Pipeline
+            </h1>
+            <p class="mt-4 text-lg text-charcoal leading-relaxed">
+                Building an autonomous lead qualification agent that reaches 95% of hot prospects within 5 minutes, booking 38% more property showings on autopilot.
+            </p>
+        </div>
+
+        <!-- KPI Scoreboard -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-surface border border-borderHairline shadow-subtle mb-14 text-center">
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">127/mo</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Qualified Leads Generated</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">&lt; 5 min</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Response Window (95%)</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-pitchBlack">+38%</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Property Showings Booked</div>
+            </div>
+            <div>
+                <div class="text-3xl sm:text-4xl font-black text-emeraldLive">$1.2M</div>
+                <div class="text-xs font-mono text-mutedCaption mt-1">Commission Deal Value</div>
+            </div>
+        </div>
+
+        <!-- Content Body -->
+        <div class="space-y-12 text-charcoal text-base leading-relaxed">
+            
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3 flex items-center gap-2">
+                    <i data-lucide="building" class="w-5 h-5 text-pitchBlack"></i>
+                    Client Profile & Challenge
+                </h2>
+                <p>
+                    A full-time high-end residential real estate agent was spending 18 hours per week manually following up on inbound inquiries from Zillow, social ads, and LinkedIn. Despite spending thousands on ad generation, the agent only reached 40% of hot leads in time. In real estate, contacting a lead within 5 minutes increases conversion odds by 391%; waiting even 30 minutes degrades conversions by 80%.
+                </p>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-5 h-5 text-pitchBlack"></i>
+                    The AI Automation Architecture
+                </h2>
+                <p class="mb-4">
+                    Gargi Kar designed and deployed an automated multi-channel lead routing engine using <strong>Claude Code</strong>, <strong>Twilio SMS</strong>, the <strong>LinkedIn API</strong>, and <strong>n8n</strong>:
+                </p>
+
+                <div class="rounded-xl border border-borderHairline bg-surface p-5 font-mono text-xs space-y-3 my-6">
+                    <div class="text-mutedCaption">// Real-Time Lead Ingestion & Qualification Pipeline</div>
+                    <div class="text-pitchBlack">
+                        <strong>1. Real-Time Ingestion:</strong> Webhook captures inbound buyer/seller details instantly.
+                    </div>
+                    <div class="text-pitchBlack pl-4">
+                        ↳ AI enrichment: Scrapes public LinkedIn profile & property tax data.
+                    </div>
+                    <div class="text-pitchBlack">
+                        <strong>2. AI Lead Scoring Engine:</strong> LLM evaluates timeline, pre-approval status, and budget.
+                    </div>
+                    <div class="text-pitchBlack pl-4">
+                        ↳ Categorizes leads: Tier A (Immediate Booking), Tier B (Nurture), Tier C (Unqualified).
+                    </div>
+                    <div class="text-pitchBlack">
+                        <strong>3. Multi-Channel Instant Outreach:</strong> Dispatches tailored SMS via Twilio within 120 seconds.
+                    </div>
+                    <div class="text-emeraldLive font-semibold">
+                        <strong>4. Automated Calendar Booking:</strong> Synchronizes showing slots directly to Google Calendar.
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-4 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-pitchBlack"></i>
+                    Performance Comparison
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border border-borderHairline rounded-lg overflow-hidden font-mono">
+                        <thead class="bg-surface uppercase text-mutedCaption border-b border-borderHairline">
+                            <tr>
+                                <th class="p-3">Metric</th>
+                                <th class="p-3">Manual Workflow</th>
+                                <th class="p-3">Automated AI Pipeline</th>
+                                <th class="p-3 text-emeraldLive">Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-borderHairline">
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Hot Leads Contacted &lt;5m</td>
+                                <td class="p-3">40%</td>
+                                <td class="p-3 font-bold text-pitchBlack">95%</td>
+                                <td class="p-3 text-emeraldLive font-bold">+137% speed rate</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Monthly Qualified Leads</td>
+                                <td class="p-3">42 leads</td>
+                                <td class="p-3 font-bold text-pitchBlack">127 leads</td>
+                                <td class="p-3 text-emeraldLive font-bold">+202% volume</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-pitchBlack font-bold">Agent Weekly Admin Time</td>
+                                <td class="p-3">18 hours</td>
+                                <td class="p-3 font-bold text-pitchBlack">2.5 hours</td>
+                                <td class="p-3 text-emeraldLive font-bold">15.5 hrs saved/wk</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <h2 class="text-xl font-bold text-pitchBlack mb-3">Tool Stack & APIs</h2>
+                <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">Claude Code AI</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">Twilio Programmable SMS</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">LinkedIn API Integration</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">n8n Orchestrator</span>
+                    <span class="px-3 py-1 rounded-full bg-surface border border-borderHairline text-charcoal">Google Calendar API</span>
+                </div>
+            </section>
+
+            <section class="border-b border-borderHairline pb-10">
+                <div class="p-6 rounded-xl bg-surface border border-borderHairline shadow-subtle italic text-charcoal text-sm leading-relaxed">
+                    "I used to lose deals simply because I was on the road showing houses while inquiries sat in my inbox. Gargi's system engages every lead within minutes, qualifies their financing, and books them right on my calendar. It added $1.2M in commission pipeline."
+                    <div class="mt-3 font-semibold text-xs text-pitchBlack not-italic">
+                        — Full-Time Luxury Real Estate Broker
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-14 pt-8 border-t border-borderHairline flex items-center justify-between">
+            <a href="case-study-ecommerce.html" class="text-xs font-mono font-medium text-charcoal hover:text-pitchBlack flex items-center gap-1.5">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                Previous: E-Commerce
+            </a>
+            <a href="case-study-legal.html" class="text-xs font-mono font-semibold text-pitchBlack hover:underline flex items-center gap-1.5">
+                Next: Legal Document Automation
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+
+        <!-- Pre-Footer CTA -->
+        <div class="mt-14 rounded-2xl border border-pitchBlack bg-pitchBlack text-white p-8 text-center shadow-cardLift">
+            <h3 class="text-2xl font-bold tracking-tight">Ready to Automate Inbound Lead Qualification?</h3>
+            <p class="mt-2 text-xs text-zinc-400 max-w-md mx-auto">
+                Turn your lead funnels into 24/7 conversion machines in 2 weeks.
+            </p>
+            <div class="mt-5 flex justify-center gap-3">
+                <a href="mailto:gargikar63@gmail.com?subject=Real%20Estate%20Lead%20Automation" class="btn-primary text-xs font-semibold px-5 py-2.5 rounded-full bg-white text-pitchBlack hover:bg-zinc-100">
+                    Connect With Gargi Kar
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-borderHairline bg-surface py-8 text-center text-xs text-mutedCaption font-mono">
+        © 2026 Gargi Kar • AI Automation Expert • gargikar63@gmail.com
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+name,company,platform,job_title,project_type,budget,location,status,post_date,urgency,industry,stack,pain_points
+"Acme E-Commerce","Acme Store","Upwork","Build Cart Recovery AI","AI Cart Recovery","$800-1500","Remote","Active","2026-04-25","High","E-commerce","Shopify","cart abandonment"
+"Ridge Realty Group","Ridge Realty Inc.","Upwork","Automate Lead Followup","Lead Automation","$600-1200","Remote","Active","2026-04-25","Urgent","Real Estate","Manual","lead tracking"
+"LegalFlow Docs","LegalFlow LLC","Upwork","Document Generation AI","Document Automation","$400-900","Remote","Active","2026-04-25","High","Legal","Manual drafting","repetitive templates"
+"MetroHealth AI","MetroHealth Group","LinkedIn","Patient Scheduling Bot","Healthcare AI","$500-1000","Remote","Active","2026-04-25","Medium","Healthcare","Manual scheduling","booking delays"
+"Apex Manufacturing","Apex Corp","Upwork","AI QC Inspection","Manufacturing AI","$700-1400","Remote","Active","2026-04-25","Urgent","Manufacturing","Cambridge QC","defect rates"
+"Trend Accounting","Trend Solutions","Upwork","Year-End Audit Prep","Accounting AI","$300-600","Remote","Active","2026-04-25","High","Accounting","Excel/Quicken","tax prep time"
+"Bloom Consulting","Bloom Advisors","Upwork","Client Onboarding AI","Client Automation","$450-850","Remote","Active","2026-04-25","Medium","Consulting","Manual intake","data entry"
+"Swift Logistics","Swift Transport","Upwork","Inventory Tracking AI","Logistics AI","$550-1100","Remote","Active","2026-04-25","High","Logistics","Manual tracking","stock errors"
+"Prime Fitness","Fitness Centers","Upwork","Member Engagement AI","E-commerce AI","$350-750","Remote","Active","2026-04-25","Medium","Fitness","Manual CRM","retention rate"
+"CulinaryChef AI","Chef Master Class","Upwork","Menu Planning AI","Content Automation","$280-550","Remote","Active","2026-04-25","Medium","Education","Manual creation","course content"

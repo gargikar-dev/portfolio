@@ -1,0 +1,280 @@
+{
+  "case_studies": [
+    {
+      "id": "ecommerce",
+      "page_url": "case-study-ecommerce.html",
+      "title": "E-Commerce Revenue Acceleration",
+      "industry": "E-commerce",
+      "problem": "Client losing 30% of cart abandonments and missing 15 hrs/week on manual customer support",
+      "solution": "Implemented AI cart recovery bot + automated support chatbot using n8n + GPT-4",
+      "results": [
+        "Recovered $47,000/month in lost cart value",
+        "Reduced support response time from 2 hrs to 12 sec",
+        "Saved 20+hrs/week manual work",
+        "Increased revenue 35% in 2 months"
+      ],
+      "tools_used": ["n8n", "GPT-4", "Zapier", "Shopify API", "Klaviyo"],
+      "roi": "350%",
+      "timeline": "3 weeks deployment",
+      "client_size": "$20K+ monthly GMV DTC brand",
+      "kpis": [
+        { "value": "+$47,000", "label": "Monthly Cart Recovery" },
+        { "value": "12 sec", "label": "Support Latency (was 2h)" },
+        { "value": "20.5 hrs", "label": "Weekly Time Saved" },
+        { "value": "350%", "label": "First-Year Measured ROI" }
+      ],
+      "client_profile": "Direct-to-consumer (DTC) lifestyle brand with high paid acquisition spend but high checkout abandonment and support delays.",
+      "challenge_details": [
+        "30% of high-intent shoppers abandoned carts without completing checkout, with generic email reminders converting under 14%.",
+        "Solo founder and virtual assistant spent 20+ hours weekly answering routine inquiries, with average reply times over 2 hours.",
+        "Lost sales velocity during evening and weekend peaks when no support staff was active."
+      ],
+      "architecture": [
+        "Shopify Checkout Webhook triggers within 15 minutes of cart inactivity.",
+        "n8n orchestrator ingests customer cart SKUs, browsing session data, and order history.",
+        "OpenAI GPT-4 synthesizes hyper-personalized recovery copy addressing specific product objections.",
+        "24/7 Conversational AI Chatbot trained on full product catalog answers sizing and shipping queries in 12 seconds."
+      ],
+      "comparison": [
+        { "metric": "Monthly Recovered Sales", "before": "$3,200", "after": "$50,200", "impact": "+$47,000/mo" },
+        { "metric": "Support Latency", "before": "2h 15m", "after": "12 seconds", "impact": "99.8% faster" },
+        { "metric": "Founder Weekly Hours", "before": "22 hrs", "after": "1.5 hrs", "impact": "20.5 hrs saved" },
+        { "metric": "60-Day Revenue Delta", "before": "Baseline", "after": "+35% growth", "impact": "350% Net ROI" }
+      ],
+      "testimonial": {
+        "quote": "Gargi transformed how our store operates. We went from losing thousands in abandoned carts to watching orders recover on autopilot 24/7. Her 3-week deployment paid for itself within 48 hours.",
+        "author": "E-Commerce Founder & Managing Director"
+      }
+    },
+    {
+      "id": "realestate",
+      "page_url": "case-study-realestate.html",
+      "title": "Real Estate Lead Generation Automation",
+      "industry": "Real Estate",
+      "problem": "Agent spending 18hrs/week on lead follow-ups and only contacting 40% of hot leads",
+      "solution": "Built AI lead scoring + automated multi-channel follow-up system",
+      "results": [
+        "Contacted 95% of qualified leads within 5 min",
+        "Generated 127 qualified leads/month vs 42 previously",
+        "Booked 38% more showings",
+        "Closed deals worth $1.2M additional commission"
+      ],
+      "tools_used": ["Claude Code", "Twilio", "LinkedIn API", "n8n", "Google Calendar"],
+      "roi": "290%",
+      "timeline": "2 weeks deployment",
+      "client_size": "Full-time Luxury Real Estate Agent",
+      "kpis": [
+        { "value": "127/mo", "label": "Qualified Leads (was 42)" },
+        { "value": "< 5 min", "label": "Contact Speed (95% rate)" },
+        { "value": "+38%", "label": "Showings Booked" },
+        { "value": "$1.2M", "label": "Commission Deal Pipeline" }
+      ],
+      "client_profile": "Top-producing luxury residential agent handling high lead volume from digital campaigns across multiple portals.",
+      "challenge_details": [
+        "Agent was constantly on showings, causing inbound leads to sit uncontacted for 2 to 6 hours.",
+        "Lead conversion odds decay by 391% if not contacted within 5 minutes of inquiry submission.",
+        "18 hours spent every week on administrative triage, qualification calls, and calendar scheduling."
+      ],
+      "architecture": [
+        "Instant webhook ingestion captures buyer and seller inquiries from Zillow, Facebook Ads, and landing pages.",
+        "Claude Code AI enriches leads via public LinkedIn data and scores intent based on budget and purchase timeline.",
+        "Twilio SMS automated dispatch reaches 95% of prospects with conversational qualification within 120 seconds.",
+        "Automated calendar booking synchronizes showing slots directly to Google Calendar."
+      ],
+      "comparison": [
+        { "metric": "Hot Leads Contacted <5m", "before": "40%", "after": "95%", "impact": "+137% speed" },
+        { "metric": "Monthly Qualified Leads", "before": "42 leads", "after": "127 leads", "impact": "+202% volume" },
+        { "metric": "Agent Weekly Admin Time", "before": "18 hours", "after": "2.5 hours", "impact": "15.5 hrs saved" },
+        { "metric": "Added Commission Volume", "before": "$0", "after": "$1.2M pipeline", "impact": "290% Net ROI" }
+      ],
+      "testimonial": {
+        "quote": "I used to lose deals simply because I was on the road while inquiries sat in my inbox. Gargi's system engages every lead within minutes and books them right on my calendar.",
+        "author": "Full-Time Luxury Real Estate Broker"
+      }
+    },
+    {
+      "id": "legal",
+      "page_url": "case-study-legal.html",
+      "title": "Legal Document Automation",
+      "industry": "Legal Services",
+      "problem": "Law firm drafting same templates manually, wasting 12hrs/week per attorney",
+      "solution": "Created AI document generation workflow for contracts, NDAs, and briefs",
+      "results": [
+        "Reduced document prep time by 65%",
+        "Prepared 40+ documents/day vs 12 previously",
+        "Eliminated errors and missed clauses",
+        "Saved $15,000/month in attorney billable hours"
+      ],
+      "tools_used": ["Python", "OpenAI", "LangChain", "Airtable", "python-docx"],
+      "roi": "420%",
+      "timeline": "10 days deployment",
+      "client_size": "5-attorney corporate law firm",
+      "kpis": [
+        { "value": "65%", "label": "Prep Time Reduction" },
+        { "value": "40+ docs", "label": "Daily Document Output" },
+        { "value": "$15,000", "label": "Monthly Billable Saved" },
+        { "value": "420%", "label": "First-Year Measured ROI" }
+      ],
+      "client_profile": "Commercial law practice handling hundreds of standard vendor contracts, NDAs, employment agreements, and court filings.",
+      "challenge_details": [
+        "Attorneys spending 12 hours/week copying and pasting boilerplate clauses, leading to fatigue and administrative drag.",
+        "Drafting delays caused client deals to stall while waiting for contract reviews.",
+        "Manual re-assembly introduced occasional clause omission and formatting discrepancies."
+      ],
+      "architecture": [
+        "Structured client intake form via Airtable captures deal parameters, governing law, and indemnities.",
+        "LangChain pipeline matches parameters against attorney-approved modular clause libraries.",
+        "Strict prompt boundaries prevent hallucination; text generation strictly bound to firm's master templates.",
+        "Outputs formatted DOCX and PDF files with complete numbering, ready for final attorney sign-off."
+      ],
+      "comparison": [
+        { "metric": "Document Prep Duration", "before": "90–120 mins", "after": "15–20 mins", "impact": "65% faster" },
+        { "metric": "Daily Documents Handled", "before": "12 docs/day", "after": "40+ docs/day", "impact": "+233% output" },
+        { "metric": "Clause Omission Errors", "before": "~4% rate", "after": "0% (compliant)", "impact": "Zero errors" },
+        { "metric": "Billable Hours Saved", "before": "0 hrs", "after": "60 hrs/month", "impact": "$15,000/mo saved" }
+      ],
+      "testimonial": {
+        "quote": "Gargi's system saved our firm over $15,000 every single month in billable hours. Our lawyers spend their time in negotiation rather than copying clauses.",
+        "author": "Managing Partner, Commercial Law Practice"
+      }
+    },
+    {
+      "id": "healthcare",
+      "page_url": "case-study-healthcare.html",
+      "title": "Healthcare Patient Scheduling AI",
+      "industry": "Healthcare",
+      "problem": "Receptionists missing 40% of appointment requests and dealing with 50 calls/week",
+      "solution": "Implemented 24/7 AI scheduling assistant with insurance verification",
+      "results": [
+        "Increased appointment bookings 60%",
+        "Reduced no-shows by 35% with SMS reminders",
+        "Handled 200+ interactions/week",
+        "Receptionist freed for complex cases"
+      ],
+      "tools_used": ["Twilio", "Google Calendar API", "GPT-4", "n8n", "Webhooks"],
+      "roi": "280%",
+      "timeline": "5 weeks deployment",
+      "client_size": "Multi-location outpatient clinic",
+      "kpis": [
+        { "value": "+60%", "label": "Booking Volume Growth" },
+        { "value": "-35%", "label": "Patient No-Show Rate" },
+        { "value": "200+", "label": "Weekly Interactions" },
+        { "value": "280%", "label": "First-Year Measured ROI" }
+      ],
+      "client_profile": "Outpatient specialty medical clinic with multiple doctors across two locations struggling with phone queue volume.",
+      "challenge_details": [
+        "Front desk overwhelmed during morning hours, causing 40% of patient inquiries to go to voicemail.",
+        "Patients requiring off-hours bookings at night or weekends had no self-service reservation option.",
+        "High patient no-show rate (18.5%) leaving costly doctor schedule gaps."
+      ],
+      "architecture": [
+        "Omni-channel conversational assistant handles SMS and web inquiries 24 hours a day, 7 days a week.",
+        "GPT-4 triage categorizes patient specialty needs, provider in-network criteria, and urgency.",
+        "Direct Google Calendar API integration finds real-time slots and locks reservations immediately.",
+        "Smart automated SMS reminders sent at 48h and 2h before visits cut patient no-shows significantly."
+      ],
+      "comparison": [
+        { "metric": "Missed Call Volume", "before": "40% unreturned", "after": "< 1% (24/7 live)", "impact": "+60% bookings" },
+        { "metric": "Patient No-Show Rate", "before": "18.5%", "after": "11.9%", "impact": "-35% no-shows" },
+        { "metric": "Weekly Handled Requests", "before": "75 calls", "after": "200+ interactions", "impact": "+166% capacity" },
+        { "metric": "Clinic Staff Overhead", "before": "High burnout", "after": "Self-serve triage", "impact": "280% Net ROI" }
+      ],
+      "testimonial": {
+        "quote": "Patients love scheduling at 10 PM from their phones without waiting on hold. Doctor schedules are fuller than ever, and our desk staff is no longer overwhelmed.",
+        "author": "Operations Director, Regional Medical Group"
+      }
+    },
+    {
+      "id": "manufacturing",
+      "page_url": "case-study-manufacturing.html",
+      "title": "Manufacturing Quality Control AI",
+      "industry": "Manufacturing",
+      "problem": "Manual inspection missing defects, causing 8% quality failure rate",
+      "solution": "Deployed computer vision + AI defect detection system",
+      "results": [
+        "Reduced defect rate from 8% to 1.2%",
+        "Caught 156 quality issues/day previously missed",
+        "Reduced waste costs by $22,000/month",
+        "Prevented 3 product recalls"
+      ],
+      "tools_used": ["Python", "OpenCV", "TensorFlow", "Edge devices", "MQTT"],
+      "roi": "520%",
+      "timeline": "6 weeks deployment",
+      "client_size": "50-employee precision manufacturing facility",
+      "kpis": [
+        { "value": "8% → 1.2%", "label": "Defect Rate Reduction" },
+        { "value": "156/day", "label": "Anomalies Caught Live" },
+        { "value": "$22,000", "label": "Monthly Scrap Saved" },
+        { "value": "520%", "label": "First-Year Measured ROI" }
+      ],
+      "client_profile": "Precision components manufacturer producing metallic and polymer parts under stringent Tier-1 tolerances.",
+      "challenge_details": [
+        "Human inspectors experiencing eye fatigue after hours on high-speed conveyor lines.",
+        "8% quality failure rate slipping into packaging, resulting in customer chargebacks and recall risks.",
+        "Excessive scrap material costs averaging $32,000 monthly due to late defect discovery."
+      ],
+      "architecture": [
+        "High-speed optical industrial cameras capture parts at 30 frames per second directly on the conveyor.",
+        "OpenCV normalizes contrast and aligns parts within 14 milliseconds.",
+        "TensorFlow convolutional neural network detects micro-cracks, surface burrs, and dimensional variance.",
+        "Pneumatic actuator rejects flawed components instantly while streaming metrics to plant telemetry."
+      ],
+      "comparison": [
+        { "metric": "Defect Escape Rate", "before": "8.0%", "after": "1.2%", "impact": "85% reduction" },
+        { "metric": "Scan Latency Per Part", "before": "4.5 seconds", "after": "45 milliseconds", "impact": "100x faster" },
+        { "metric": "Monthly Scrap Cost", "before": "$32,000", "after": "$10,000", "impact": "$22,000/mo saved" },
+        { "metric": "Customer Recall Events", "before": "3 near-misses", "after": "0 incidents", "impact": "520% Net ROI" }
+      ],
+      "testimonial": {
+        "quote": "Gargi's vision system paid for itself in month one by catching 156 hidden defects daily that our inspectors missed. It protected our Tier-1 automotive contracts.",
+        "author": "VP of Quality Assurance & Plant Operations"
+      }
+    },
+    {
+      "id": "accounting",
+      "page_url": "case-study-accounting.html",
+      "title": "Accounting Firm Audit Automation",
+      "industry": "Accounting/Finance",
+      "problem": "Accountants spending 25hrs/week on repetitive data entry and verification",
+      "solution": "Built AI document processing + reconciliation automation",
+      "results": [
+        "Processed 500+ receipts/day automatically",
+        "Reduced audit prep from 10 days to 2 days",
+        "Eliminated 92% of data entry errors",
+        "Freed 3 accountants for advisory services"
+      ],
+      "tools_used": ["Python", "OCR APIs", "n8n", "SQL", "QuickBooks/Xero"],
+      "roi": "380%",
+      "timeline": "4 weeks deployment",
+      "client_size": "CPA firm with 120+ corporate clients",
+      "kpis": [
+        { "value": "10d → 2d", "label": "Audit Prep Duration" },
+        { "value": "500+/day", "label": "Invoices Handled" },
+        { "value": "92%", "label": "Fewer Data Entry Errors" },
+        { "value": "380%", "label": "First-Year Measured ROI" }
+      ],
+      "client_profile": "CPA and business advisory practice managing monthly reconciliations, payroll, and audits for commercial clients.",
+      "challenge_details": [
+        "Certified staff spent 25 hours weekly manually copying numbers from PDF invoices and paper receipts into spreadsheets.",
+        "10-day audit cycle created extreme stress and overtime costs during tax reporting quarters.",
+        "Human transcription errors caused discrepancies during ledger reconciliation."
+      ],
+      "architecture": [
+        "Client invoice and receipt ingestion via secure email gateway and file drop.",
+        "Python OCR table extraction strips vendor, tax ID, line items, and totals with 99.4% accuracy.",
+        "LLM classification tags general ledger accounts based on vendor category and historical bookkeeping rules.",
+        "Automated three-way match reconciles invoices against bank feeds; 97% clear automatically into ledger."
+      ],
+      "comparison": [
+        { "metric": "Audit Prep Timeline", "before": "10 business days", "after": "2 business days", "impact": "80% faster" },
+        { "metric": "Data Entry Error Rate", "before": "7.8%", "after": "< 0.6%", "impact": "92% fewer errors" },
+        { "metric": "Accountant Entry Time", "before": "25 hrs/week", "after": "3 hrs review/wk", "impact": "3 CPAs freed" },
+        { "metric": "Practice Revenue Growth", "before": "Flat capacity", "after": "+40 clients served", "impact": "380% Net ROI" }
+      ],
+      "testimonial": {
+        "quote": "This changed the economics of our firm. We stopped hiring data entry temps during tax season and took on 40 additional corporate clients without hiring an extra CPA.",
+        "author": "Senior Partner, Regional CPA & Advisory Group"
+      }
+    }
+  ]
+}

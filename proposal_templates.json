@@ -1,0 +1,35 @@
+{
+  "proposal_templates": {
+    "ai_audit": {
+      "subject_line": "AI Audit Opportunity - {Company Name} - Potential $XXXK/mo Savings",
+      "body": """Hi {FirstName},\n\nI recently analyzed {Company Name}'s industry and noticed {Industry Insight}.\n\nI specialize in AI automation that:\n✅ Reduces operational overhead by 60%\n✅ Increases revenue by 40% within 2 months\n✅ Identifies costly manual process loopholes\n\nQuick question: Would you be open to a free 15-minute AI audit of your current workflows?\n\nI'll identify:\n• 3-5 high-cost manual processes wasting money daily\n• AI automation opportunities with instant ROI\n• Implementation roadmap with cost projections\n\nI work remotely on part-time basis and can start this week.\n\nBest,\nGargi Kar\nAI Automation Expert"""
+    },
+    "e_commerce": {
+      "subject_line": "Recovered $XXK/mo for E-com Store - Similar to {Website URL}",
+      "body": """Hi {FirstName},\n\nI see you're running \"{StoreName}\" with products in {Niche}.\n\nI built an AI automation for a similar store that:\n• Recovered $47K/mo in lost cart abandonments\n• Cut support workload by 60%\n• Added $18K/mo revenue\n\nI can implement similar systems for you using:\n• AI cart recovery & upsell sequences\n• 24/7 conversational support automation\n• Inventory & order processing automation\n\nOpen to seeing a quick demo?\n\nThanks,\nGargi"""
+    },
+    "real_estate": {
+      "subject_line": "Contact 95% of Leads within 5 min - Real Estate Lead Gen Setup",
+      "body": """Hi {FirstName},\n\nSaw your profile on {Platform}.\n\nYour ideal clients are active online RIGHT NOW waiting to be contacted.\n\nI automated one agent's follow-up system:\n• Contacted 95% of hot leads in <5 min\n• Generated 127 qualified leads/month (up from 42)\n• Booked 38% more showings\n\nI'd build this exact setup for you in 2 weeks.\n\nOpen to a 15-min chat this week?\n\nBest,\nGargi Kar"""
+    },
+    "general_ai_consulting": {
+      "subject_line": "AI Expert Available - 60% Cost Reduction Opportunity for {Company Name}",
+      "body": """Hi {FirstName},\n\nI'm an AI Automation Expert helping businesses like {Company Name}:\n• Identify workflow loopholes costing money daily\n• Implement AI solutions under $XK/mo investment\n• Achieve 40% revenue growth in 2 months\n\nCurrent availability: Remote part-time projects\nProject minimum: $300/project\nDeployment: 1-3 weeks depending on scope\n\nI'd love to discuss how AI can accelerate your business.\n\nLet me know a good time to connect.\n\nGargi Kar\n+91 8777547678\n"""
+    }
+  },
+  "personalization_guide": {
+    "industry_insights": {
+      "e_commerce": "Your high cart value + recent marketing spend = prime for AI recovery automation",
+      "real_estate": "Hot market means you can't afford to miss leads. AI follows up 24/7 while you sleep.",
+      "legal": "Every hour spent on repetitive docs is a billable hour lost. AI handles templates instantly.",
+      "healthcare": "Patient acquisition costs high. AI scheduling maximizes every appointment request.",
+      "accounting": "Year-end is coming. Automated audit prep saves you 15+ billable hours/day."
+    },
+    "pain_point_questions": [
+      "What's your most expensive manual process right now?",
+      "How many leads do you lose to slow follow-up?",
+      "Where do you need to reduce $XXX cost?",
+      "What keeps you from scaling your team?"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "dashboard_previews": [
+    {
+      "name": "AI Audit Dashboard Template",
+      "description": "Post-Audit Results Display",
+      "metrics": {
+        "overall_score": 7.2,
+        "manual_processes_found": 12,
+        "ai_automation_opportunities": 8,
+        "estimated_savings_monthly": "$10,200",
+        "revenue_increase_potential": "28%",
+        "implementation_effort": "2-3 weeks"
+      },
+      "sections": ["Process Scorecard", "ROI Calculator", "Implementation Roadmap", "Tool Stack Recommendation"],
+      "demo_note": "Replace metrics with actual audit results"
+    },
+    {
+      "name": "Revenue Recovery Dashboard",
+      "description": "Cart Recovery & Support Automation Results",
+      "metrics": {
+        "cart_recovery_rate": "58%",
+        "recoveries_last_30_days": "$47,690",
+        "revenue_growth_mom": "+32%",
+        "support_time_savings_hr_week": "20+",
+        "conversion_rate": "2.8%"
+      },
+      "charts": ["Recovered Cart Value over time", "Revenue Growth Chart", "Support Efficiency Metrics"],
+      "demo_note": "Shows real-time recovery tracking"
+    },
+    {
+      "name": "Lead Generation Dashboard",
+      "description": "Real Estate Lead Auto-Followup System",
+      "metrics": {
+        "leads_contacted_tom": "95%",
+        "qualified_leads_monthly": 156,
+        "showings_booked": 38,
+        "response_time": "3 min avg",
+        "conversion_to_showing": "22%"
+      },
+      "charts": ["Leads Funnel", "Showings Calendar", "ROI Dashboard"],
+      "demo_note": "Live lead tracking with AI followup status"
+    },
+    {
+      "name": "Document Automation Dashboard",
+      "description": "Legal Document Generation System",
+      "metrics": {
+        "documents_generated_today": 47,
+        "prep_time_saved_per_doc": "45 min",
+        "errors_eliminated": "0",
+        "billable_hours_reclaimed_monthly": "62 hrs",
+        "template_library": 24
+      },
+      "charts": ["Volume vs Manual Baseline", "Time Saved Chart"],
+      "demo_note": "Queue management with AI drafting"
+    },
+    {
+      "name": "Process Optimization Dashboard",
+      "description": "Workflow Efficiency Analysis",
+      "metrics": {
+        "bottlenecks_identified": 5,
+        "manual_tasks_automated": 12,
+        "hours_saved_weekly": 28,
+        "cost_reduction_percent": "57%",
+        "process_score": "8.5/10"
+      },
+      "charts": ["Bottleneck Analysis", "Efficiency Trends", "Cost Savings Projection"],
+      "demo_note": "Visual process mapping with AI agents"
+    },
+    {
+      "name": "Executive Summary Dashboard",
+      "description": "Client Progress Overview",
+      "metrics": {
+        "automation_projects_active": 3,
+        "roi_this_quarter": "310%",
+        "time_from_audite_deploy": "18 days avg",
+        "client_satisfaction": "4.9/5",
+        "recovered_hours_total": 428
+      },
+      "charts": ["Quarterly ROI", "Project Health", "Satisfaction Trends"],
+      "demo_note": "High-level metrics for stakeholder presentations"
+    }
+  ],
+  "email_footer": {
+    "signature": "Gargi Kar\nAI Automation Expert | Workflow Designer\n📍 Kolkata, India | 🌐 Remote Worldwide\n📧 gargikar63@gmail.com | 📱 +91 8777547678\n🔗 www.gargikar.ai-automation.com",
+    "cta_button": " Schedule 15-Min AI Audit Call",
+    "social_links": ["LinkedIn", "Twitter", "Portfolio"]
+  }
+}

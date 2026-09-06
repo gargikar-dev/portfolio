@@ -1,0 +1,36 @@
+PORTFOLIO LINKS:
+
+1. LOCAL SERVER (View on your computer):
+   http://localhost:8080
+   - Open browser and type: http://localhost:8080
+   - OR run: python -m http.server 8080
+   - Then open: http://localhost:8080
+
+2. TO GET PUBLIC LINK (for clients):
+   Upload these files to free hosting:
+   - portfolio/index.html
+   - portfolio/case_studies.json
+   - Any images you want
+
+   Free options:
+   a) Netlify (netlify.com) - Drag & drop portfolio folder
+   b) GitHub Pages - Upload to repo, enable Pages
+   c) Vercel (vercel.com) - Free hosting
+   d) Your own domain - point to above services
+
+3. ONCE HOSTED, SHARE THIS LINK:
+   [Your hosted URL]
+   Example: https://gargikar-portfolio.netlify.app
+
+4. TO GET HOSTED QUICKLY (5 min):
+   → Go to: https://app.netlify.com/drop
+   → Drag portfolio folder
+   → Get instant link: https://yoursite.netlify.app
+   → Share with anyone
+
+YOUR CURRENT FILES:
+C:\Users\crypt\OneDrive\Desktop\portfolio\
+
+TO START LOCAL SERVER RIGHT NOW:
+- Save this command, then run it:
+  Start-Process "http://localhost:8080"

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gargi Kar — AI Automation Expert & Workflow Designer</title>
+    <meta name="description"
+        content="Gargi Kar: AI Automation Expert helping businesses reduce operational overhead by 60% and increase revenue by 40% through intelligent AI workflows and automation systems.">
+
+    <!-- Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN configured with inverted monochrome design tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#FFFFFF',
+                        borderHairline: '#E4E4E7',
+                        borderSubtle: '#D4D4D8',
+                        surface: '#FAFAFA',
+                        surfaceMuted: '#F4F4F5',
+                        pitchBlack: '#09090B',
+                        charcoal: '#52525B',
+                        mutedCaption: '#71717A',
+                        emeraldLive: '#059669',
+                    },
+                    boxShadow: {
+                        subtle: '0 1px 2px rgba(0,0,0,0.04), 0 12px 24px -4px rgba(0,0,0,0.06)',
+                        cardLift: '0 20px 32px -8px rgba(0,0,0,0.09), 0 1px 3px rgba(0,0,0,0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Keycap Bevel */
+        .keycap {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 1px 5px;
+            background: #FAFAFA;
+            color: #52525B;
+            border: 1px solid #D4D4D8;
+            border-bottom: 2px solid #A1A1AA;
+            border-radius: 4px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+        }
+
+        .btn-primary .keycap {
+            background: #27272A;
+            color: #FAFAFA;
+            border-color: #3F3F46;
+            border-bottom-color: #52525B;
+        }
+
+        /* Ambient Card Shadows */
+        .ambient-card {
+            background: #FAFAFA;
+            border: 1px solid #E4E4E7;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 24px -4px rgba(0, 0, 0, 0.06);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ambient-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 32px -8px rgba(0, 0, 0, 0.09), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border-color: #D4D4D8;
+        }
+
+        /* Clean Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FAFAFA;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4D4D8;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A1A1AA;
+        }
+
+        /* Pulse animation for active live status */
+        @keyframes pulse-emerald {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.35;
+                transform: scale(0.85);
+            }
+        }
+
+        .pulse-live {
+            animation: pulse-emerald 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-pitchBlack antialiased selection:bg-black selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-pitchBlack text-white text-sm font-medium px-4 py-3 rounded-lg shadow-xl border border-zinc-800">
+        <i data-lucide="check-circle" class="w-4 h-4 text-emeraldLive"></i>
+        <span id="toast-message">Copied to clipboard</span>
+    </div>
+
+    <!-- 1. Sticky Glass Navbar -->
+    <header
+        class="sticky top-0 z-40 w-full border-b border-borderHairline bg-white/85 backdrop-blur-md transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-2.5">
+                <a href="#" class="flex items-center gap-2 group">
+                    <img src="gargi-kar.jpg" alt="Gargi Kar"
+                        class="w-8 h-8 rounded-lg object-cover border border-borderHairline shadow-sm group-hover:scale-105 transition-transform" />
+                    <span class="font-bold text-lg tracking-tight text-pitchBlack">Gargi Kar</span>
+                    <span
+                        class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-surfaceMuted text-charcoal border border-borderHairline uppercase tracking-wider">AI
+                        EXPERT</span>
+                </a>
+            </div>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal">
+                <a href="#summary" class="hover:text-pitchBlack transition-colors">Overview</a>
+                <a href="#skills" class="hover:text-pitchBlack transition-colors">Skills & Stack</a>
+                <a href="#workflow" class="hover:text-pitchBlack transition-colors">Methodology</a>
+                <a href="#case-studies" class="hover:text-pitchBlack transition-colors">Case Studies</a>
+                <a href="#comparison" class="hover:text-pitchBlack transition-colors">ROI Comparison</a>
+                <a href="#contact" class="hover:text-pitchBlack transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="mailto:gargikar63@gmail.com"
+                    class="btn-primary inline-flex items-center gap-2 bg-pitchBlack text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm active:scale-95">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Connect With Me</span>
+                    <span class="keycap">C</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-charcoal hover:text-pitchBlack">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-borderHairline bg-white px-4 py-4 space-y-3">
+            <a href="#summary" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">Overview</a>
+            <a href="#skills" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">Skills & Stack</a>
+            <a href="#workflow" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">Methodology</a>
+            <a href="#case-studies" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">Case
+                Studies</a>
+            <a href="#comparison" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">ROI
+                Comparison</a>
+            <a href="#contact" class="block text-sm font-medium text-charcoal hover:text-pitchBlack">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="summary"
+            class="relative pt-16 pb-16 md:pt-24 md:pb-20 border-b border-borderHairline overflow-hidden">
+            <!-- Subtle Grid Background lines -->
+            <div
+                class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#F4F4F5_1px,transparent_1px),linear-gradient(to_bottom,#F4F4F5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
+            </div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Status & Email Chip -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface border border-borderHairline shadow-sm mb-8 hover:border-borderSubtle transition-all cursor-pointer group"
+                    onclick="copyEmail()">
+                    <span class="w-2 h-2 rounded-full bg-emeraldLive pulse-live"></span>
+                    <span class="font-mono text-xs text-charcoal font-medium">Available for Remote Projects •
+                        gargikar63@gmail.com</span>
+                    <div
+                        class="flex items-center text-mutedCaption group-hover:text-pitchBlack transition-colors pl-1 border-l border-borderHairline">
+                        <i data-lucide="copy" class="w-3.5 h-3.5" id="copyIcon"></i>
+                    </div>
+                </div>
+
+                <!-- Main Heading (Gargi's original core message) -->
+                <h1
+                    class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-pitchBlack max-w-4xl mx-auto leading-[1.08]">
+                    Transform Your Business with AI Automation.
+                </h1>
+
+                <!-- Subtitle (Gargi's original text) -->
+                <p class="mt-6 text-lg sm:text-xl text-charcoal max-w-2xl mx-auto font-normal leading-relaxed">
+                    I help businesses reduce operational overhead by <strong>60%</strong> and increase revenue by
+                    <strong>40%</strong> through intelligent AI workflows, custom agents, and autonomous systems.
+                </p>
+
+                <!-- Dual CTAs -->
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+                    <a href="mailto:gargikar63@gmail.com"
+                        class="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-pitchBlack text-white text-base font-semibold px-6 py-3.5 rounded-full hover:bg-zinc-800 transition-all shadow-sm hover:scale-[1.02] active:scale-95">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>Connect With Me</span>
+                        <span class="keycap">C</span>
+                    </a>
+                    <a href="#case-studies"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-pitchBlack text-base font-semibold px-6 py-3.5 rounded-full border border-borderHairline hover:border-pitchBlack hover:bg-surface transition-all shadow-sm active:scale-95">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        <span>View 6 Case Studies</span>
+                        <span class="keycap">V</span>
+                    </a>
+                </div>
+
+                <!-- Footnote / Location Details -->
+                <p class="mt-4 text-xs text-mutedCaption font-mono">
+                    📍 Kolkata, India | 🌐 Remote Worldwide | ⚡ Quick Deployment (1–3 Weeks) | 💼 $300+ / project
+                </p>
+
+                <!-- macOS Product Preview Mockup: AI Automation Workflow Control Panel -->
+                <div
+                    class="mt-14 max-w-5xl mx-auto rounded-xl border border-borderHairline bg-white shadow-cardLift overflow-hidden text-left">
+                    <!-- Window Titlebar -->
+                    <div
+                        class="h-11 px-4 border-b border-borderHairline bg-surface flex items-center justify-between select-none">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></span>
+                            <span class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></span>
+                            <span class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></span>
+                            <span class="ml-2 font-mono text-xs text-mutedCaption">Gargi Kar — AI Workflow Engine v3.0
+                                (n8n + Python + LLM)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emeraldLive bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emeraldLive"></span>
+                                6 Production Workflows Live
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Window Body: Active Automation Workflows & Inspector -->
+                    <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white">
+                        <!-- Left: Automated Pipeline List -->
+                        <div class="lg:col-span-7 space-y-3">
+                            <div class="flex items-center justify-between pb-2 border-b border-borderHairline">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-mutedCaption">Active AI
+                                    Automations</span>
+                                <span class="text-xs font-mono text-charcoal">Orchestrator: n8n + LangChain</span>
+                            </div>
+
+                            <!-- Pipeline 1 -->
+                            <div
+                                class="p-3.5 rounded-lg border border-borderHairline bg-surface hover:border-pitchBlack transition-all flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emeraldLive"></div>
+                                    <div>
+                                        <div
+                                            class="font-mono text-sm font-semibold text-pitchBlack flex items-center gap-1.5">
+                                            ecommerce-cart-recovery.bot
+                                            <span
+                                                class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 text-emeraldLive border border-emerald-200">+$47K/mo</span>
+                                        </div>
+                                        <div class="text-xs text-charcoal font-mono mt-0.5">Shopify API + GPT-4 + n8n
+                                            webhook • 12 sec avg latency</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-xs px-2 py-0.5 rounded bg-surfaceMuted text-charcoal border border-borderHairline">350%
+                                        ROI</span>
+                                </div>
+                            </div>
+
+                            <!-- Pipeline 2 -->
+                            <div
+                                class="p-3.5 rounded-lg border border-borderHairline bg-surface hover:border-pitchBlack transition-all flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emeraldLive"></div>
+                                    <div>
+                                        <div
+                                            class="font-mono text-sm font-semibold text-pitchBlack flex items-center gap-1.5">
+                                            realestate-lead-scoring.agent
+                                            <span
+                                                class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 text-emeraldLive border border-emerald-200">127
+                                                Leads/mo</span>
+                                        </div>
+                                        <div class="text-xs text-charcoal font-mono mt-0.5">Twilio SMS + LinkedIn API +
+                                            Claude Code • 5 min follow-up</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-xs px-2 py-0.5 rounded bg-surfaceMuted text-charcoal border border-borderHairline">290%
+                                        ROI</span>
+                                </div>
+                            </div>
+
+                            <!-- Pipeline 3 -->
+                            <div
+                                class="p-3.5 rounded-lg border border-borderHairline bg-surface hover:border-pitchBlack transition-all flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emeraldLive"></div>
+                                    <div>
+                                        <div
+                                            class="font-mono text-sm font-semibold text-pitchBlack flex items-center gap-1.5">
+                                            legal-document-generator.workflow
+                                            <span
+                                                class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 text-emeraldLive border border-emerald-200">-65%
+                                                Prep Time</span>
+                                        </div>
+                                        <div class="text-xs text-charcoal font-mono mt-0.5">Python + LangChain +
+                                            Airtable • 40+ docs generated/day</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="font-mono text-xs px-2 py-0.5 rounded bg-surfaceMuted text-charcoal border border-borderHairline">420%
+                                        ROI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Live AI Pipeline Execution Inspector -->
+                        <div
+                            class="lg:col-span-5 rounded-lg border border-borderHairline bg-surfaceMuted p-4 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-2 mb-3 border-b border-borderHairline">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-mutedCaption">Live
+                                        Execution Stream</span>
+                                    <button onclick="testWorkflowTrigger()"
+                                        class="text-xs font-mono font-medium px-2 py-0.5 rounded bg-white border border-borderHairline text-pitchBlack hover:bg-zinc-100 transition-colors flex items-center gap-1">
+                                        <i data-lucide="play" class="w-3 h-3 text-emeraldLive fill-current"></i>
+                                        Test Workflow
+                                    </button>
+                                </div>
+                                <div class="space-y-2 font-mono text-xs">
+                                    <div
+                                        class="flex items-center justify-between bg-white p-2 rounded border border-borderHairline">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-emeraldLive">AUTORUN</span>
+                                            <span
+                                                class="text-pitchBlack truncate max-w-[150px]">ai_audit_scanner.py</span>
+                                        </div>
+                                        <span id="pipelineStatusBadge"
+                                            class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded text-[10px] font-bold">200
+                                            SUCCESS</span>
+                                    </div>
+                                    <div
+                                        class="bg-white p-2.5 rounded border border-borderHairline text-[11px] text-charcoal font-mono leading-relaxed overflow-x-auto">
+                                        <div class="text-mutedCaption">// Gargi Kar Automation Output Metrics</div>
+                                        <div>{</div>
+                                        <div class="pl-3">"cost_reduction": "60%",</div>
+                                        <div class="pl-3">"revenue_growth": "40%",</div>
+                                        <div class="pl-3">"average_roi": "373%",</div>
+                                        <div class="pl-3">"deployment_speed": "1-3 weeks",</div>
+                                        <div class="pl-3">"status": "Ready for new project"</div>
+                                        <div>}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-borderHairline flex items-center justify-between text-[11px] font-mono text-mutedCaption">
+                                <span>LLMs: GPT-4 • Claude • Gemini</span>
+                                <span>Status: Operational</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Key Metrics & Social Proof Bar -->
+        <section class="py-12 border-b border-borderHairline bg-surface">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4 bg-white rounded-xl border border-borderHairline shadow-subtle">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-pitchBlack">60%</div>
+                        <div class="text-xs font-mono text-mutedCaption mt-1">Operational Cost Cut</div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-borderHairline shadow-subtle">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-pitchBlack">40%</div>
+                        <div class="text-xs font-mono text-mutedCaption mt-1">Average Revenue Growth</div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-borderHairline shadow-subtle">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-pitchBlack">6/6</div>
+                        <div class="text-xs font-mono text-mutedCaption mt-1">Validated Case Studies</div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-borderHairline shadow-subtle">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-pitchBlack">1–3 Wks</div>
+                        <div class="text-xs font-mono text-mutedCaption mt-1">Rapid Deployment Speed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Numbered Workflow Stepper (01 — 04 Methodology) -->
+        <section id="workflow" class="py-20 md:py-28 border-b border-borderHairline">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption">Structured
+                        Methodology</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack mt-2">
+                        How I engineer high-ROI automation systems.
+                    </h2>
+                    <p class="mt-3 text-lg text-charcoal">
+                        A rigorous 4-step framework turning manual operational bottlenecks into autonomous profit
+                        drivers.
+                    </p>
+                </div>
+
+                <!-- Stepper List -->
+                <div class="space-y-10">
+
+                    <!-- Step 01 -->
+                    <div
+                        class="ambient-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-3">
+                            <span
+                                class="font-mono text-3xl sm:text-4xl font-black text-pitchBlack tracking-tighter">01</span>
+                            <h3 class="text-2xl font-bold tracking-tight text-pitchBlack">
+                                AI Audit & Gap Analysis.
+                            </h3>
+                            <p class="text-charcoal leading-relaxed text-sm">
+                                I dissect your company's manual workflows, customer communication loops, and repetitive
+                                admin tasks to pinpoint exact loopholes costing you money and time daily.
+                            </p>
+                            <div class="pt-2">
+                                <span
+                                    class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emeraldLive bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    Identify 15+ wasted hours/week
+                                </span>
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-7 bg-white rounded-xl border border-borderHairline p-5 shadow-sm font-mono text-xs space-y-2">
+                            <div class="text-mutedCaption">// Audit Output & Opportunity Scorecard</div>
+                            <div class="flex justify-between border-b border-borderHairline pb-2">
+                                <span>Cart Abandonment Recovery</span>
+                                <span class="font-bold text-pitchBlack">High Impact ($47K potential)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-borderHairline pb-2">
+                                <span>Support Response Latency (2 hrs → 12 sec)</span>
+                                <span class="font-bold text-pitchBlack">90% Time Saved</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Lead Response Window (>1 hr → 5 min)</span>
+                                <span class="font-bold text-pitchBlack">38% More Deals Closed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div
+                        class="ambient-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-3">
+                            <span
+                                class="font-mono text-3xl sm:text-4xl font-black text-pitchBlack tracking-tighter">02</span>
+                            <h3 class="text-2xl font-bold tracking-tight text-pitchBlack">
+                                Architecture & Workflow Design.
+                            </h3>
+                            <p class="text-charcoal leading-relaxed text-sm">
+                                Building the core engine using n8n, Python, LangChain, and API webhooks. Each node is
+                                engineered for fault tolerance, zero data loss, and seamless handoffs between systems.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="font-mono text-xs px-2.5 py-1 rounded bg-surface border border-borderHairline text-charcoal">n8n
+                                    Builder</span>
+                                <span
+                                    class="font-mono text-xs px-2.5 py-1 rounded bg-surface border border-borderHairline text-charcoal">Python
+                                    scripts</span>
+                                <span
+                                    class="font-mono text-xs px-2.5 py-1 rounded bg-surface border border-borderHairline text-charcoal">Webhook
+                                    routing</span>
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-7 bg-white rounded-xl border border-borderHairline p-5 shadow-sm font-mono text-xs space-y-2">
+                            <div class="text-mutedCaption">// Architecture Flow Representation</div>
+                            <div class="p-3 bg-surface rounded border border-borderHairline space-y-1">
+                                <div class="text-pitchBlack font-bold">[Trigger: Webhook/Event]</div>
+                                <div class="text-charcoal">↳ Intent Classification (GPT-4 / Claude)</div>
+                                <div class="text-charcoal">↳ Route to CRM (HubSpot/Shopify/Airtable API)</div>
+                                <div class="text-emeraldLive font-semibold">↳ Instant Execution & Alert Dispatched
+                                    (120ms)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div
+                        class="ambient-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-3">
+                            <span
+                                class="font-mono text-3xl sm:text-4xl font-black text-pitchBlack tracking-tighter">03</span>
+                            <h3 class="text-2xl font-bold tracking-tight text-pitchBlack">
+                                Vibe Coding & Rapid Prototyping.
+                            </h3>
+                            <p class="text-charcoal leading-relaxed text-sm">
+                                Utilizing modern AI-assisted engineering tools like Claude Code AI, Antigravity, and
+                                Cursor to build and test functioning prototypes in days instead of months.
+                            </p>
+                            <div class="pt-2">
+                                <span
+                                    class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-charcoal bg-surface border border-borderHairline px-3 py-1 rounded-full">
+                                    <i data-lucide="zap" class="w-3.5 h-3.5"></i> Working demo in 48-72 hours
+                                </span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 bg-zinc-900 text-white rounded-xl p-5 shadow-sm font-mono text-xs">
+                            <div class="text-zinc-400 mb-2">// Prototype Deployment Log</div>
+                            <div class="text-emerald-400">$ python -m prototype.deploy --env staging</div>
+                            <div class="text-zinc-300 mt-1">✓ Connected: OpenAI GPT-4 + Twilio + Shopify APIs</div>
+                            <div class="text-zinc-300 mt-1">✓ Automated test suite: 24/24 integration tests passed</div>
+                            <div class="text-white font-bold mt-2">✨ Ready for client review: 100% functional</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div
+                        class="ambient-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-3">
+                            <span
+                                class="font-mono text-3xl sm:text-4xl font-black text-pitchBlack tracking-tighter">04</span>
+                            <h3 class="text-2xl font-bold tracking-tight text-pitchBlack">
+                                Deployment & Continuous Monitoring.
+                            </h3>
+                            <p class="text-charcoal leading-relaxed text-sm">
+                                Production rollout with complete documentation, error fallback triggers, and performance
+                                instrumentation. Your team gains full ownership of the system.
+                            </p>
+                            <div class="pt-2">
+                                <span
+                                    class="font-mono text-xs px-2.5 py-1 rounded bg-zinc-900 text-white font-semibold">
+                                    Complete Client Documentation Included
+                                </span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 bg-white rounded-xl border border-borderHairline p-5 shadow-sm">
+                            <div
+                                class="flex items-center justify-between pb-3 mb-3 border-b border-borderHairline text-xs font-mono">
+                                <span class="font-bold text-pitchBlack">Handover Deliverables</span>
+                                <span class="text-emeraldLive">Status: Ready</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                                <div class="p-2.5 rounded bg-surface border border-borderHairline">
+                                    <span class="text-mutedCaption block">System Documentation</span>
+                                    <span class="font-bold text-pitchBlack">AUTOMATION_MANUAL.md</span>
+                                </div>
+                                <div class="p-2.5 rounded bg-surface border border-borderHairline">
+                                    <span class="text-mutedCaption block">Maintenance Mode</span>
+                                    <span class="font-bold text-pitchBlack">24/7 Autonomous</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Gargi's Complete Skills & Tech Stack Bento Grid -->
+        <section id="skills" class="py-20 md:py-28 border-b border-borderHairline bg-surface">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption">Core
+                        Competencies</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack mt-2">
+                        Skills & Technical Stack.
+                    </h2>
+                    <p class="mt-3 text-lg text-charcoal">
+                        Deep specialization across AI engineering, digital growth strategies, and enterprise API
+                        integrations.
+                    </p>
+                </div>
+
+                <!-- 3-Column Bento Grid representing Gargi's 3 skill categories -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Card 1: AI & Automation -->
+                    <div class="ambient-card rounded-2xl p-7 flex flex-col justify-between bg-white">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface border border-borderHairline flex items-center justify-center text-pitchBlack mb-5">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-pitchBlack">🎯 AI & Automation</h3>
+                            <p class="mt-2 text-xs text-mutedCaption">Autonomous agent infrastructure & workflow
+                                redesign.</p>
+
+                            <ul class="mt-6 space-y-2.5 text-xs text-charcoal font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>AI Audit & Gap Analysis</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Workflow Automation (n8n)</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>System Creation from Scratch</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Vibe Coding & Rapid Prototyping</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>LLM Integration (GPT-4, Gemini, Claude)</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Custom AI Agents Development</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderHairline font-mono text-xs text-mutedCaption">
+                            <span>n8n • LangChain • Custom Agents</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Digital Growth -->
+                    <div class="ambient-card rounded-2xl p-7 flex flex-col justify-between bg-white">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface border border-borderHairline flex items-center justify-center text-pitchBlack mb-5">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-pitchBlack">📈 Digital Growth</h3>
+                            <p class="mt-2 text-xs text-mutedCaption">Scalable acquisition systems and automated
+                                conversion loops.</p>
+
+                            <ul class="mt-6 space-y-2.5 text-xs text-charcoal font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Content Strategy & SEO</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Lead Generation Systems</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Conversion Rate Optimization (CRO)</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Search Engine Visibility</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Social Media Integration</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Multi-channel Automated Campaigns</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderHairline font-mono text-xs text-mutedCaption">
+                            <span>Inbound & Outbound Growth Engines</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Technical Stack -->
+                    <div class="ambient-card rounded-2xl p-7 flex flex-col justify-between bg-white">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-surface border border-borderHairline flex items-center justify-center text-pitchBlack mb-5">
+                                <i data-lucide="terminal" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-pitchBlack">💻 Technical Stack</h3>
+                            <p class="mt-2 text-xs text-mutedCaption">Battle-tested tools and frameworks used in
+                                production.</p>
+
+                            <ul class="mt-6 space-y-2.5 text-xs text-charcoal font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Python & LangChain Framework</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>n8n Visual Workflow Builder</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>GPT-4 & Gemini AI Models</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Claude Code AI Assistant</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Antigravity Autonomous Framework</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive"></i>
+                                    <span>Shopify, WordPress, CRM APIs</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderHairline font-mono text-xs text-mutedCaption">
+                            <span>Robust Python & API Integration</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Technical Badges -->
+                <div
+                    class="mt-14 pt-8 border-t border-borderHairline flex flex-wrap items-center justify-center gap-2.5">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-mutedCaption mr-2">Production
+                        Tooling:</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Python</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">n8n</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">OpenAI
+                        GPT-4</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Anthropic
+                        Claude</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Google
+                        Gemini</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">LangChain</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Shopify
+                        API</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Twilio</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">Airtable</span>
+                    <span
+                        class="px-3 py-1 rounded-full bg-white border border-borderHairline font-mono text-xs font-medium text-charcoal">REST
+                        Webhooks</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Proven Results: 6 Real Case Studies (Loaded Dynamically) -->
+        <section id="case-studies" class="py-20 md:py-28 border-b border-borderHairline">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                    <div>
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption">Verified
+                            Track Record</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack mt-2">
+                            Proven Results — 6 Real Case Studies.
+                        </h2>
+                        <p class="mt-3 text-lg text-charcoal">
+                            Every case study represents live client deployments with verified ROI and measurable
+                            business impact.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="mailto:gargikar63@gmail.com?subject=Inquiry%20Regarding%20Case%20Studies"
+                            class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold">
+                            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                            <span>Discuss Your Project</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Studies Grid populated via JavaScript from case_studies.json -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="caseStudiesContainer">
+                    <!-- Cards will be populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Cost / ROI Comparison Section -->
+        <section id="comparison" class="py-20 md:py-28 border-b border-borderHairline bg-surface">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption">Investment vs
+                        Value</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack mt-2">
+                        Why AI Automation Outperforms Manual Hiring.
+                    </h2>
+                    <p class="mt-3 text-lg text-charcoal">
+                        Deploy intelligent automated systems for a fraction of traditional full-time overhead.
+                    </p>
+                </div>
+
+                <!-- Side-by-Side Comparison Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                    <!-- Gargi Kar AI Automation Card -->
+                    <div
+                        class="rounded-2xl border-2 border-pitchBlack bg-white p-8 shadow-cardLift flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-bold text-xl text-pitchBlack">Gargi Kar — AI Automation</span>
+                                <span
+                                    class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emeraldLive border border-emerald-200">High
+                                    ROI</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-pitchBlack">$300+ <span
+                                    class="text-sm font-normal text-mutedCaption">/ project minimum</span></div>
+                            <p class="text-xs text-charcoal mt-1">One-time investment, permanent productivity gains.</p>
+
+                            <ul class="mt-6 space-y-3 text-sm text-charcoal">
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emeraldLive flex-shrink-0"></i>
+                                    <span><strong>60% reduction</strong> in manual operational overhead</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emeraldLive flex-shrink-0"></i>
+                                    <span><strong>40% increase</strong> in revenue via instant lead responses</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emeraldLive flex-shrink-0"></i>
+                                    <span>Fast deployment within <strong>1–3 weeks</strong></span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emeraldLive flex-shrink-0"></i>
+                                    <span>Full code ownership & detailed documentation</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-8 pt-4 border-t border-borderHairline text-center">
+                            <a href="mailto:gargikar63@gmail.com"
+                                class="w-full btn-primary text-sm font-semibold py-2.5 rounded-full inline-block text-center">
+                                Connect With Me
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Manual Operations Alternative Card -->
+                    <div
+                        class="rounded-2xl border border-borderHairline bg-surfaceMuted p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-bold text-xl text-charcoal">Manual & Full-Time In-House</span>
+                                <span
+                                    class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">High
+                                    Friction ⚠️</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-charcoal">$5,000–$10,000+ <span
+                                    class="text-sm font-normal text-mutedCaption">/ month recurring</span></div>
+                            <p class="text-xs text-mutedCaption mt-1">Ongoing payroll, training delays, and human error
+                                risk.</p>
+
+                            <ul class="mt-6 space-y-3 text-sm text-charcoal opacity-85">
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="x" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                    <span>20+ hours wasted each week on data entry & support</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="x" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                    <span>Slow lead follow-ups losing 30-40% of deals</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="x" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                    <span>2-3 months recruiting and onboarding time</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i data-lucide="x" class="w-4 h-4 text-red-500 flex-shrink-0"></i>
+                                    <span>Manual mistakes causing lost cart revenue and errors</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="mt-8 pt-4 border-t border-borderHairline text-center font-mono text-xs text-mutedCaption">
+                            Costly recurring overhead without scalable output
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Interactive Accordion FAQ -->
+        <section class="py-20 md:py-28 border-b border-borderHairline">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption">Answers &
+                        Clarity</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-pitchBlack mt-2">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+
+                    <!-- FAQ 1 -->
+                    <div class="border border-borderHairline rounded-xl bg-white overflow-hidden transition-all">
+                        <button onclick="toggleFaq(1)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between font-semibold text-pitchBlack hover:bg-surface transition-colors">
+                            <span>What types of automation projects do you build?</span>
+                            <i data-lucide="chevron-down" id="faqIcon-1"
+                                class="w-5 h-5 text-mutedCaption transition-transform duration-200"></i>
+                        </button>
+                        <div id="faqAnswer-1"
+                            class="hidden px-6 pb-5 text-sm text-charcoal leading-relaxed border-t border-borderHairline pt-4 bg-surface">
+                            I specialize in end-to-end AI workflows: autonomous lead generation systems, customer
+                            support chatbots, cart abandonment bots, legal/financial document generation, multi-channel
+                            outbound campaigns, and CRM synchronization using n8n, Python, and modern LLMs (GPT-4,
+                            Gemini, Claude).
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-borderHairline rounded-xl bg-white overflow-hidden transition-all">
+                        <button onclick="toggleFaq(2)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between font-semibold text-pitchBlack hover:bg-surface transition-colors">
+                            <span>How fast can a project be deployed?</span>
+                            <i data-lucide="chevron-down" id="faqIcon-2"
+                                class="w-5 h-5 text-mutedCaption transition-transform duration-200"></i>
+                        </button>
+                        <div id="faqAnswer-2"
+                            class="hidden px-6 pb-5 text-sm text-charcoal leading-relaxed border-t border-borderHairline pt-4 bg-surface">
+                            Most custom workflows and AI prototypes are fully deployed and operational within <strong>1
+                                to 3 weeks</strong>, depending on complexity and API access. Working prototypes are
+                            typically demonstrated within 48 to 72 hours.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-borderHairline rounded-xl bg-white overflow-hidden transition-all">
+                        <button onclick="toggleFaq(3)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between font-semibold text-pitchBlack hover:bg-surface transition-colors">
+                            <span>What are the typical project costs?</span>
+                            <i data-lucide="chevron-down" id="faqIcon-3"
+                                class="w-5 h-5 text-mutedCaption transition-transform duration-200"></i>
+                        </button>
+                        <div id="faqAnswer-3"
+                            class="hidden px-6 pb-5 text-sm text-charcoal leading-relaxed border-t border-borderHairline pt-4 bg-surface">
+                            Project minimum begins at <strong>$300+ per workflow system</strong>. Pricing is transparent
+                            and scoped upfront based on the exact deliverables and automation architecture needed.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="border border-borderHairline rounded-xl bg-white overflow-hidden transition-all">
+                        <button onclick="toggleFaq(4)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between font-semibold text-pitchBlack hover:bg-surface transition-colors">
+                            <span>Do I get full ownership of the code and workflows?</span>
+                            <i data-lucide="chevron-down" id="faqIcon-4"
+                                class="w-5 h-5 text-mutedCaption transition-transform duration-200"></i>
+                        </button>
+                        <div id="faqAnswer-4"
+                            class="hidden px-6 pb-5 text-sm text-charcoal leading-relaxed border-t border-borderHairline pt-4 bg-surface">
+                            Yes, 100%. All custom Python scripts, n8n JSON workflow exports, API configurations, and
+                            documentation (AUTOMATION_MANUAL.md) are handed over to your team with full rights.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Final Pre-Footer Call to Action -->
+        <section class="py-20 bg-white" id="contact">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="rounded-3xl border border-pitchBlack bg-pitchBlack text-white p-8 sm:p-14 text-center shadow-cardLift">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                        Let's Automate Your Success.
+                    </h2>
+                    <p class="mt-4 text-zinc-400 max-w-xl mx-auto text-base">
+                        Ready to reduce costs by 60% and scale your revenue with intelligent automation?
+                    </p>
+                    <div class="mt-8 flex items-center justify-center">
+                        <a href="mailto:gargikar63@gmail.com"
+                            class="btn-primary w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-pitchBlack font-semibold text-sm hover:bg-zinc-100 transition-all shadow-sm inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-95">
+                            <i data-lucide="mail" class="w-4 h-4 text-pitchBlack"></i>
+                            <span>Connect With Me</span>
+                            <span class="keycap">C</span>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-xs text-zinc-500 font-mono">
+                        Available for remote part-time projects • $300+ per project • Quick deployment
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Expanded Case Study Modal Overlay -->
+    <div id="caseStudyModal"
+        class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm transition-opacity duration-200 flex justify-center items-center p-3 sm:p-6 overflow-y-auto">
+        <div
+            class="relative w-full max-w-4xl bg-white rounded-2xl shadow-cardLift border border-borderHairline my-auto overflow-hidden text-left flex flex-col max-h-[92vh]">
+            <!-- Modal Header -->
+            <div
+                class="h-14 px-6 border-b border-borderHairline bg-surface flex items-center justify-between flex-shrink-0 select-none">
+                <div class="flex items-center gap-3">
+                    <span id="modalIndustryBadge"
+                        class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-white text-charcoal border border-borderHairline"></span>
+                    <span id="modalRoiBadge"
+                        class="text-xs font-mono font-bold text-emeraldLive bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full"></span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a id="modalStandaloneLink" href="#"
+                        class="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-medium text-charcoal hover:text-pitchBlack px-3 py-1 rounded-lg border border-borderHairline hover:bg-surfaceMuted transition-colors">
+                        <span>Open Separate Page</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <button onclick="closeCaseStudyModal()"
+                        class="w-8 h-8 rounded-lg flex items-center justify-center text-charcoal hover:text-pitchBlack hover:bg-surfaceMuted transition-colors">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-8" id="modalBody">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 border-t border-borderHairline bg-surface flex flex-col sm:flex-row items-center justify-between gap-3 flex-shrink-0">
+                <div class="text-xs font-mono text-mutedCaption">
+                    Deployment: <span id="modalTimeline" class="font-bold text-pitchBlack"></span> • <span
+                        id="modalClient"></span>
+                </div>
+                <div class="flex items-center gap-2.5 w-full sm:w-auto">
+                    <a id="modalStandaloneBottomLink" href="#"
+                        class="w-full sm:w-auto text-center px-4 py-2 rounded-full border border-borderHairline hover:border-pitchBlack text-xs font-semibold text-pitchBlack transition-colors">
+                        Open Separate Page ↗
+                    </a>
+                    <a href="mailto:gargikar63@gmail.com?subject=Inquiry%20Regarding%20Case%20Study"
+                        class="btn-primary w-full sm:w-auto text-center px-5 py-2 rounded-full text-xs font-semibold">
+                        Discuss Similar Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Comprehensive Developer-Tool Footer -->
+    <footer class="border-t border-borderHairline bg-surface py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Col 1 -->
+                <div>
+                    <h5 class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack mb-3">Gargi Kar</h5>
+                    <p class="text-xs text-charcoal leading-relaxed">
+                        AI Automation Expert, Workflow Designer & AI Audit Specialist helping modern businesses scale
+                        through intelligent autonomous systems.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack mb-3">Services</h5>
+                    <ul class="space-y-2 text-xs text-charcoal font-medium">
+                        <li><a href="#skills" class="hover:text-pitchBlack transition-colors">AI Audit & Gap
+                                Analysis</a></li>
+                        <li><a href="#skills" class="hover:text-pitchBlack transition-colors">n8n Workflow
+                                Automation</a></li>
+                        <li><a href="#skills" class="hover:text-pitchBlack transition-colors">Custom AI Agents
+                                (GPT-4/Claude)</a></li>
+                        <li><a href="#skills" class="hover:text-pitchBlack transition-colors">E-Commerce & Lead
+                                Funnels</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack mb-3">Case Studies
+                    </h5>
+                    <ul class="space-y-2 text-xs text-charcoal font-medium">
+                        <li><a href="case-study-ecommerce.html"
+                                class="hover:text-pitchBlack transition-colors">E-Commerce (+$47K/mo)</a></li>
+                        <li><a href="case-study-realestate.html" class="hover:text-pitchBlack transition-colors">Real
+                                Estate (127 Leads/mo)</a></li>
+                        <li><a href="case-study-legal.html" class="hover:text-pitchBlack transition-colors">Legal
+                                Document AI (420% ROI)</a></li>
+                        <li><a href="case-study-healthcare.html"
+                                class="hover:text-pitchBlack transition-colors">Healthcare Scheduling (280% ROI)</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h5 class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack mb-3">Direct Contact
+                    </h5>
+                    <ul class="space-y-2 text-xs text-charcoal font-mono">
+                        <li>
+                            <a href="mailto:gargikar63@gmail.com"
+                                class="hover:text-pitchBlack transition-colors underline font-medium">
+                                gargikar63@gmail.com
+                            </a>
+                        </li>
+                        <li class="text-mutedCaption">Kolkata, India (Remote Worldwide)</li>
+                        <li class="text-mutedCaption">Min Project: $300+</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-14 pt-8 border-t border-borderHairline flex flex-col sm:flex-row items-center justify-between text-xs text-mutedCaption gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-pitchBlack">Gargi Kar</span>
+                    <span>© 2026. All rights reserved. High-contrast inverted developer UI.</span>
+                </div>
+                <div class="flex items-center gap-4 font-mono">
+                    <span>Press <span class="keycap">C</span> to Connect • Press <span class="keycap">V</span> for Case
+                        Studies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Render Lucide Icons
+        lucide.createIcons();
+
+        // Global store for case studies
+        let allCaseStudies = [];
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            if (!toast || !toastMsg) return;
+
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-16', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-16', 'opacity-0');
+            }, 2500);
+        }
+
+        // Copy Email Helper
+        function copyEmail() {
+            navigator.clipboard.writeText('gargikar63@gmail.com').then(() => {
+                showToast('Copied "gargikar63@gmail.com" to clipboard');
+            }).catch(() => {
+                showToast('gargikar63@gmail.com');
+            });
+        }
+
+        // Test Workflow Trigger Demo Button
+        function testWorkflowTrigger() {
+            const badge = document.getElementById('pipelineStatusBadge');
+            if (!badge) return;
+
+            badge.textContent = 'RUNNING...';
+            badge.className = 'text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded text-[10px] font-bold';
+
+            setTimeout(() => {
+                badge.textContent = '200 SUCCESS';
+                badge.className = 'text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded text-[10px] font-bold';
+                showToast('AI Workflow scan simulated successfully (Latency: 18ms)');
+            }, 500);
+        }
+
+        // Accordion FAQ Toggle
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faqAnswer-${id}`);
+            const icon = document.getElementById(`faqIcon-${id}`);
+            if (!answer) return;
+
+            const isHidden = answer.classList.contains('hidden');
+            if (isHidden) {
+                answer.classList.remove('hidden');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Global Keyboard Shortcut Listener ('C' -> Connect, 'V' -> View Case Studies, 'Escape' -> Close Modal)
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+            if (e.key === 'Escape') {
+                closeCaseStudyModal();
+            } else if (e.key === 'c' || e.key === 'C') {
+                e.preventDefault();
+                window.location.href = 'mailto:gargikar63@gmail.com';
+                showToast('Opening email client for gargikar63@gmail.com');
+            } else if (e.key === 'v' || e.key === 'V') {
+                e.preventDefault();
+                const csSec = document.getElementById('case-studies');
+                if (csSec) csSec.scrollIntoView({ behavior: 'smooth' });
+                showToast('Navigating to Case Studies');
+            }
+        });
+
+        // Expand Detailed Case Study Modal
+        function openCaseStudyModal(id) {
+            if (!allCaseStudies || !allCaseStudies.length) return;
+            const cs = allCaseStudies.find(c => c.id === id || (c.title && c.title.toLowerCase().includes(String(id).toLowerCase()))) || allCaseStudies[id] || allCaseStudies[0];
+            if (!cs) return;
+
+            document.getElementById('modalIndustryBadge').textContent = cs.industry;
+            document.getElementById('modalRoiBadge').textContent = `ROI: ${cs.roi}`;
+            document.getElementById('modalTimeline').textContent = cs.timeline;
+            document.getElementById('modalClient').textContent = cs.client_size;
+
+            const standaloneLink = document.getElementById('modalStandaloneLink');
+            const standaloneBottomLink = document.getElementById('modalStandaloneBottomLink');
+            if (standaloneLink) standaloneLink.href = cs.page_url || '#';
+            if (standaloneBottomLink) standaloneBottomLink.href = cs.page_url || '#';
+
+            // Build KPIs HTML
+            const kpisHtml = (cs.kpis || []).map(k => `
+                <div class="p-4 rounded-xl bg-surface border border-borderHairline text-center">
+                    <div class="text-2xl sm:text-3xl font-black text-pitchBlack">${k.value}</div>
+                    <div class="text-[11px] font-mono text-mutedCaption mt-1">${k.label}</div>
+                </div>
+            `).join('');
+
+            // Build Challenge Points
+            const challengeHtml = (cs.challenge_details || [cs.problem]).map(pt => `
+                <li class="flex items-start gap-2 text-xs text-charcoal">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 flex-shrink-0"></span>
+                    <span>${pt}</span>
+                </li>
+            `).join('');
+
+            // Build Architecture Steps
+            const archHtml = (cs.architecture || [cs.solution]).map((step, idx) => `
+                <div class="flex items-start gap-3 text-xs">
+                    <span class="w-5 h-5 rounded bg-zinc-200 text-pitchBlack flex items-center justify-center font-mono font-bold text-[11px] flex-shrink-0 mt-0.5">${idx + 1}</span>
+                    <span class="text-charcoal leading-relaxed">${step}</span>
+                </div>
+            `).join('');
+
+            // Build Comparison Table Rows
+            const tableRowsHtml = (cs.comparison || []).map(row => `
+                <tr>
+                    <td class="p-3 text-pitchBlack font-bold">${row.metric}</td>
+                    <td class="p-3 text-mutedCaption">${row.before}</td>
+                    <td class="p-3 font-bold text-pitchBlack">${row.after}</td>
+                    <td class="p-3 font-bold text-emeraldLive">${row.impact}</td>
+                </tr>
+            `).join('');
+
+            // Build Tools
+            const toolsHtml = (cs.tools_used || []).map(t => `
+                <span class="px-2.5 py-1 rounded-full bg-surface border border-borderHairline font-mono text-xs text-charcoal">${t}</span>
+            `).join('');
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-pitchBlack leading-snug">
+                        ${cs.title}
+                    </h2>
+                    <p class="mt-2 text-sm text-charcoal leading-relaxed">
+                        ${cs.client_profile || cs.problem}
+                    </p>
+                </div>
+
+                <!-- KPI Scoreboard -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    ${kpisHtml}
+                </div>
+
+                <!-- Challenge & Architecture Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                    <div class="p-5 rounded-xl border border-borderHairline bg-surface space-y-3">
+                        <div class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack flex items-center gap-1.5">
+                            <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i>
+                            Key Bottlenecks & Challenges
+                        </div>
+                        <ul class="space-y-2.5 pt-1">
+                            ${challengeHtml}
+                        </ul>
+                    </div>
+
+                    <div class="p-5 rounded-xl border border-borderHairline bg-surface space-y-3">
+                        <div class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack flex items-center gap-1.5">
+                            <i data-lucide="cpu" class="w-4 h-4 text-pitchBlack"></i>
+                            AI Architecture & Workflow
+                        </div>
+                        <div class="space-y-2.5 pt-1">
+                            ${archHtml}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Comparison Table -->
+                ${cs.comparison ? `
+                <div class="space-y-3">
+                    <div class="text-xs font-mono font-bold uppercase tracking-wider text-pitchBlack">
+                        Before vs. After Automation Impact
+                    </div>
+                    <div class="overflow-x-auto border border-borderHairline rounded-xl">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-surface uppercase text-mutedCaption border-b border-borderHairline">
+                                <tr>
+                                    <th class="p-3">Metric</th>
+                                    <th class="p-3">Before</th>
+                                    <th class="p-3">With Gargi's AI</th>
+                                    <th class="p-3 text-emeraldLive">Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-borderHairline">
+                                ${tableRowsHtml}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                ` : ''}
+
+                <!-- Tools Stack -->
+                <div class="pt-1">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-mutedCaption block mb-2">Technologies & Tooling</span>
+                    <div class="flex flex-wrap gap-2">
+                        ${toolsHtml}
+                    </div>
+                </div>
+
+                <!-- Testimonial -->
+                ${cs.testimonial ? `
+                <div class="p-5 rounded-xl bg-surface border border-borderHairline italic text-xs sm:text-sm text-charcoal leading-relaxed shadow-sm">
+                    "${cs.testimonial.quote}"
+                    <div class="mt-2 font-semibold text-xs text-pitchBlack not-italic font-mono">
+                        — ${cs.testimonial.author}
+                    </div>
+                </div>
+                ` : ''}
+            `;
+
+            const modal = document.getElementById('caseStudyModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            lucide.createIcons();
+        }
+
+        function closeCaseStudyModal() {
+            const modal = document.getElementById('caseStudyModal');
+            if (modal) modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking backdrop
+        const modalOverlay = document.getElementById('caseStudyModal');
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeCaseStudyModal();
+            });
+        }
+
+        // Load Case Studies Dynamically from case_studies.json
+        fetch('./case_studies.json?t=' + Date.now())
+            .then(res => {
+                if (!res.ok) throw new Error('Failed to load case studies');
+                return res.json();
+            })
+            .then(data => {
+                allCaseStudies = data.case_studies || [];
+                window.allCaseStudies = allCaseStudies;
+                const container = document.getElementById('caseStudiesContainer');
+                if (!container || !allCaseStudies.length) return;
+
+                container.innerHTML = '';
+                allCaseStudies.forEach(cs => {
+                    const resultsList = cs.results.map(r => `
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-emeraldLive flex-shrink-0 mt-0.5"></i>
+                            <span>${r}</span>
+                        </li>
+                    `).join('');
+
+                    const toolsPills = cs.tools_used.map(t => `
+                        <span class="px-2 py-0.5 rounded bg-surface border border-borderHairline font-mono text-[11px] text-charcoal">${t}</span>
+                    `).join('');
+
+                    const card = document.createElement('div');
+                    card.className = 'ambient-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between bg-white cursor-pointer group hover:border-pitchBlack transition-all';
+                    card.onclick = (e) => {
+                        // Prevent modal trigger if clicking directly on a link
+                        if (e.target.closest('a')) return;
+                        openCaseStudyModal(cs.id);
+                    };
+
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-borderHairline mb-4">
+                                <span class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-surface text-charcoal border border-borderHairline">
+                                    ${cs.industry}
+                                </span>
+                                <span class="text-xs font-mono font-bold text-emeraldLive">
+                                    ROI: ${cs.roi}
+                                </span>
+                            </div>
+
+                            <div class="text-3xl font-extrabold text-pitchBlack mb-2 tracking-tight group-hover:text-black">
+                                ${cs.roi}
+                            </div>
+                            <h3 class="text-lg font-bold text-pitchBlack mb-2 group-hover:underline decoration-1 underline-offset-2">
+                                ${cs.title}
+                            </h3>
+
+                            <div class="mt-3 space-y-3 text-xs text-charcoal">
+                                <div>
+                                    <span class="font-mono text-[10px] uppercase tracking-wider text-mutedCaption block">Challenge</span>
+                                    <p class="mt-0.5 text-charcoal leading-relaxed">${cs.problem}</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] uppercase tracking-wider text-mutedCaption block">AI Solution</span>
+                                    <p class="mt-0.5 text-charcoal leading-relaxed">${cs.solution}</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-borderHairline">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-mutedCaption block mb-2">Key Results</span>
+                                <ul class="space-y-1.5 text-xs text-pitchBlack font-medium">
+                                    ${resultsList}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-borderHairline">
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                ${toolsPills}
+                            </div>
+                            <div class="flex items-center justify-between text-[11px] font-mono text-mutedCaption mb-4">
+                                <span>Deployment: ${cs.timeline}</span>
+                                <span>${cs.client_size}</span>
+                            </div>
+                            
+                            <!-- Actions: In-Page Expansion & Standalone Page -->
+                            <div class="flex items-center gap-2">
+                                <button onclick="openCaseStudyModal('${cs.id}')" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-pitchBlack text-white hover:bg-zinc-800 text-xs font-semibold transition-all shadow-sm">
+                                    <span>Expand Details</span>
+                                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                                </button>
+                                <a href="${cs.page_url || '#'}" title="Open standalone page" class="p-2.5 rounded-xl border border-borderHairline hover:border-pitchBlack text-charcoal hover:text-pitchBlack bg-white hover:bg-surface transition-all flex items-center justify-center">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+
+                // Re-render icons for dynamically added cards
+                lucide.createIcons();
+
+                // Check URL hash for direct opening, e.g. #case-ecommerce
+                const hash = window.location.hash;
+                if (hash && hash.startsWith('#case-')) {
+                    const caseId = hash.replace('#case-', '');
+                    openCaseStudyModal(caseId);
+                }
+            })
+            .catch(err => {
+                console.error('Case study rendering error:', err);
+            });
+    </script>
+</body>
+
+</html>
