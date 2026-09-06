@@ -84,9 +84,9 @@
                 </a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="mailto:gargikar63@gmail.com?subject=Inquiry:%20Healthcare%20Scheduling%20AI" class="btn-primary inline-flex items-center gap-2 bg-pitchBlack text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm">
+                <a href="mailto:gargikar63@gmail.com?subject=Inquiry:%20Healthcare%20Scheduling%20AI" onclick="event.preventDefault(); openConnectModal('Inquiry: Healthcare Scheduling AI');" class="btn-primary inline-flex items-center gap-2 bg-pitchBlack text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-zinc-800 transition-all shadow-sm cursor-pointer">
                     <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                    <span>Hire for Similar Project</span>
+                    <span>Connect With Gargi Kar</span>
                 </a>
             </div>
         </div>
@@ -244,7 +244,7 @@
                 Turn missed customer calls into confirmed appointments and revenue automatically.
             </p>
             <div class="mt-5 flex justify-center gap-3">
-                <a href="mailto:gargikar63@gmail.com?subject=Healthcare%20Scheduling%20Automation" class="btn-primary text-xs font-semibold px-5 py-2.5 rounded-full bg-white text-pitchBlack hover:bg-zinc-100">
+                <a href="mailto:gargikar63@gmail.com?subject=Healthcare%20Scheduling%20Automation" onclick="event.preventDefault(); openConnectModal('Healthcare Scheduling Automation Consultation');" class="btn-primary text-xs font-semibold px-5 py-2.5 rounded-full bg-white text-pitchBlack hover:bg-zinc-100 cursor-pointer">
                     Connect With Gargi Kar
                 </a>
             </div>
@@ -256,8 +256,107 @@
         © 2026 Gargi Kar • AI Automation Expert • gargikar63@gmail.com
     </footer>
 
+    <!-- Connect With Gargi Kar Modal Overlay -->
+    <div id="connectModal"
+        class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm transition-opacity duration-200 flex justify-center items-center p-4">
+        <div class="relative w-full max-w-md bg-white rounded-2xl shadow-cardLift border border-borderHairline p-6 text-left">
+            <button onclick="closeConnectModal()" class="absolute top-4 right-4 p-1.5 rounded-full text-charcoal hover:text-pitchBlack hover:bg-surfaceMuted transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="flex items-center gap-3.5 pb-4 border-b border-borderHairline">
+                <img src="gargi-kar.jpg" alt="Gargi Kar" class="w-12 h-12 rounded-full object-cover border border-borderHairline shadow-sm flex-shrink-0" />
+                <div>
+                    <div class="font-bold text-base text-pitchBlack">Gargi Kar</div>
+                    <div class="text-xs text-charcoal font-mono">AI Automation Expert</div>
+                    <div class="inline-flex items-center gap-1.5 text-[11px] font-mono text-emeraldLive mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emeraldLive pulse-live"></span>
+                        <span>Available for projects • $300+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <p class="text-xs text-charcoal leading-relaxed font-medium">
+                    Send an email directly or copy address to connect:
+                </p>
+            </div>
+            <div class="mt-4 space-y-2.5">
+                <a id="connectModalGmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=gargikar63@gmail.com&su=Inquiry%20for%20Gargi%20Kar" target="_blank" rel="noopener noreferrer"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-pitchBlack text-white hover:bg-zinc-800 transition-all text-xs font-semibold shadow-sm group">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="mail" class="w-4 h-4 text-emeraldLive"></i>
+                        <span>Open in Gmail (Web)</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                </a>
+                <a id="connectModalMailtoLink" href="mailto:gargikar63@gmail.com?subject=Inquiry%20for%20Gargi%20Kar"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-surface border border-borderHairline hover:border-pitchBlack text-pitchBlack transition-all text-xs font-semibold group">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="send" class="w-4 h-4 text-charcoal"></i>
+                        <span>Open in Default Mail App</span>
+                    </div>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-mutedCaption group-hover:text-pitchBlack transition-colors"></i>
+                </a>
+                <button onclick="copyContactEmail()"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-surface border border-borderHairline hover:border-pitchBlack text-pitchBlack transition-all text-xs font-semibold group cursor-pointer">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="copy" class="w-4 h-4 text-charcoal" id="copyIcon"></i>
+                        <span>Copy: <strong class="font-mono text-pitchBlack">gargikar63@gmail.com</strong></span>
+                    </div>
+                    <span id="copyStatusBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-200 text-charcoal group-hover:bg-pitchBlack group-hover:text-white transition-colors">Copy</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        function openConnectModal(subject) {
+            const defaultSubject = subject || 'Inquiry for Gargi Kar';
+            const encoded = encodeURIComponent(defaultSubject);
+            const gmailLink = document.getElementById('connectModalGmailLink');
+            const mailtoLink = document.getElementById('connectModalMailtoLink');
+            if (gmailLink) gmailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=gargikar63@gmail.com&su=${encoded}`;
+            if (mailtoLink) mailtoLink.href = `mailto:gargikar63@gmail.com?subject=${encoded}`;
+
+            const modal = document.getElementById('connectModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                if (window.lucide) lucide.createIcons();
+            }
+        }
+
+        function closeConnectModal() {
+            const modal = document.getElementById('connectModal');
+            if (modal) modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function copyContactEmail() {
+            navigator.clipboard.writeText('gargikar63@gmail.com').then(() => {
+                const badge = document.getElementById('copyStatusBadge');
+                if (badge) {
+                    badge.textContent = '✓ Copied!';
+                    badge.className = 'text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emeraldLive font-bold';
+                    setTimeout(() => {
+                        badge.textContent = 'Copy';
+                        badge.className = 'text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-200 text-charcoal group-hover:bg-pitchBlack group-hover:text-white transition-colors';
+                    }, 2500);
+                }
+            });
+        }
+
+        const connectModalOverlay = document.getElementById('connectModal');
+        if (connectModalOverlay) {
+            connectModalOverlay.addEventListener('click', (e) => {
+                if (e.target === connectModalOverlay) closeConnectModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeConnectModal();
+        });
     </script>
 </body>
 </html>
