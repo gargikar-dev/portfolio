@@ -80,7 +80,7 @@ Best regards,
 
 Gargi Kar
 AI Automation Expert
-https://gargikar-portfolio.vercel.app
+https://gargikar-dev.github.io/portfolio/
 
 P.S. Would this be valuable for {company}?
 """

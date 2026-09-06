@@ -72,9 +72,9 @@ I work remotely on part-time basis and can start this week.
 Best regards,
 
 Gargi Kar
-AI Automation Expert | Workflow Designer
-https://gargikar-portfolio.vercel.app
-📧 gargikar63@gmail.com
+AI Automation Expert
+https://gargikar-dev.github.io/portfolio/
+gargikar63@gmail.com
 
 [Your Portfolio Link]
 

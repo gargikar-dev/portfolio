@@ -63,7 +63,7 @@ Best regards,
 
 Gargi Kar
 AI Automation Expert
-https://gargikar-portfolio.vercel.app
+https://gargikar-dev.github.io/portfolio/
 gargikar63@gmail.com
 
 P.S. Would this be valuable for {company}?
