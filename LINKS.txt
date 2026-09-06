@@ -18,9 +18,8 @@ PORTFOLIO LINKS:
    c) Vercel (vercel.com) - Free hosting
    d) Your own domain - point to above services
 
-3. ONCE HOSTED, SHARE THIS LINK:
-   [Your hosted URL]
-   Example: https://gargikar-portfolio.netlify.app
+3. LIVE HOSTED LINK:
+   https://crypticmonkey369-boop.github.io/portfolio/
 
 4. TO GET HOSTED QUICKLY (5 min):
    → Go to: https://app.netlify.com/drop
